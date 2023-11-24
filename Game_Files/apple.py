@@ -6,7 +6,7 @@ import random
 
 class Apple:
     m_frenzied_tracker = False
-    m_frenzy_iterator = -1
+    m_frenzy_iterator = 0
     m_existing_apples =[]
 
     def __init__(self, canvas, size, snake_coordinates):
@@ -41,7 +41,7 @@ class Apple:
 
     def disengage_frenzy(self):
         Apple.m_frenzied_tracker = False
-        Apple.m_frenzy_iterator=-1
+        Apple.m_frenzy_iterator=0
 
     def reset(self):
         self.disengage_frenzy()

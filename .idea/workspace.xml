@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7313458c-7955-402a-bcce-e533387b1e7f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/apple.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game_Files/apple.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game_Files/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game_Files/snake.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake_apple_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game_Files/snake_apple_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game_Files/apple.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game_Files/apple.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,20 +34,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/heral/School/Emerging Tech/Python Files/Snake_Apple_Game/Game_Files",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/heral/School/Emerging Tech/Python Files/Snake_Apple_Game/Game_Files&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\heral\School\Emerging Tech\Python Files\Snake_Apple_Game\Game_Files" />
@@ -98,6 +96,7 @@
       <workItem from="1700484242995" duration="3906000" />
       <workItem from="1700749145975" duration="16458000" />
       <workItem from="1700849919171" duration="721000" />
+      <workItem from="1700851852905" duration="2349000" />
     </task>
     <servers />
   </component>
@@ -116,7 +115,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Snake_Apple_Game$main.coverage" NAME="main Coverage Results" MODIFIED="1700775950175" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\heral\School\Emerging Tech\Python Files\Snake_Apple_Game" />
+    <SUITE FILE_PATH="coverage/Snake_Apple_Game$main.coverage" NAME="main Coverage Results" MODIFIED="1700854175191" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\heral\School\Emerging Tech\Python Files\Snake_Apple_Game" />
     <SUITE FILE_PATH="coverage/Snake_Apple_Game$snake_apple_game.coverage" NAME="snake_apple_game Coverage Results" MODIFIED="1698504679003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
