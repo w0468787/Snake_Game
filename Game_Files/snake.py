@@ -6,12 +6,16 @@ from apple import Apple
 
 class Snake:
     def __init__(self, canvas, size):
+        self.neon_mode=False
         self.direction = "Down"
         self.canvas = canvas
         self.size = size
         self.coordinates = []
         self.squares = []
-        self.color = "#0000FF"  # Snake color
+        # Snake color
+        if self.neon_mode == False:
+            self.color = "#0000FF"  # Snake color
+
 
         canvas.update()
         # canvas_width = canvas.winfo_width()
@@ -28,10 +32,18 @@ class Snake:
         # self.coordinates.append((x, y))
         # self.squares.extend([square_1, square_2])
 
+    def generate_random_color(self):
+        r = random.randint(0, 255)
+        g = random.randint(0, 255)
+        b = random.randint(0, 255)
+        color = "#{:02X}{:02X}{:02X}".format(r, g, b)
+        return color
+
     def reset_snake(self):
         self.coordinates.clear()
         self.squares.clear()
-        self.direction="Down"
+        self.neon_mode = False
+        self.direction = "Down"
         canvas_width = self.canvas.winfo_width()
         canvas_height = self.canvas.winfo_height()
         x = random.randint(1, (canvas_width // self.size) - 1) * self.size
@@ -127,10 +139,11 @@ class Snake:
 
     def neon_snake(self):
         # Set a random color for the snake
-        self.color = "#{:06x}".format(random.randint(0, 0xFFFFFF))
-        # for square in self.squares:
-        #     # Set a random color for each square
-        #     self.color = "#{:06x}".format(random.randint(0, 0xFFFFFF))
+        #self.color = "#{:06x}".format(random.randint(0, 0xFFFFFF))
+        self.color=self.generate_random_color()
+        for square in self.squares:
+            square_color = self.generate_random_color()
+            self.canvas.itemconfig(square, fill=square_color)
 
 
     def delete_snake(self):

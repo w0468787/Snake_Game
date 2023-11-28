@@ -101,6 +101,9 @@ class SnakeGame:
 
     def set_game_mode(self, mode):
         self.game_mode_flag = mode
+        if self.game_mode_flag == 1:
+            self.snake.neon_mode=True
+
         if self.game_mode_flag == 2:
             Apple.engage_frenzy(self.apple)
 
