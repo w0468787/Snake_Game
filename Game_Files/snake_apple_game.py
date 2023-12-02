@@ -12,17 +12,18 @@ FOOD_SIZE = 20
 class SnakeGame:
 
     def __init__(self, root):
+        self.time_between_turns = 100
         # Initialize screen size and window title
-        self.first_turn_filter=True
-        self.apples=[]
+        self.first_turn_filter = True
+        self.apples = []
         self.score = 0
-        self.play_again_frame=None
+        self.play_again_frame = None
         self.root = root
         self.root.title("snake apple game")
         self.game_over_flag = False
         self.game_mode_flag = 0
-        self.menu_frame=None
-        self.game_modes_frame=None
+        self.menu_frame = None
+        self.game_modes_frame = None
         width = self.root.winfo_screenwidth()
         height = self.root.winfo_screenheight()
         self.root.geometry("%dx%d" % (width, height))
@@ -41,7 +42,6 @@ class SnakeGame:
 
         self.snake = Snake(self.canvas, BODY_SIZE)
         self.apple = Apple(self.canvas, FOOD_SIZE, self.snake.coordinates)
-
 
         # Bind arrow key events to corresponding methods
         self.root.bind('<Up>', lambda event: self.change_direction('Up'))
@@ -98,17 +98,19 @@ class SnakeGame:
         frenzy_mode_button = Button(self.game_modes_frame, text="Apple Frenzy", command=lambda: self.set_game_mode(2))
         frenzy_mode_button.pack(pady=10)
 
+        fast_snake_mode_button = Button(self.game_modes_frame, text="Speedy Snake", command=lambda: self.set_game_mode(3))
+        fast_snake_mode_button.pack(pady=10)
 
     def set_game_mode(self, mode):
         self.game_mode_flag = mode
+
         if self.game_mode_flag == 1:
-            self.snake.neon_mode=True
+            self.snake.neon_mode = True
 
         if self.game_mode_flag == 2:
             Apple.engage_frenzy(self.apple)
 
         self.start_game()
-
 
     def change_direction(self, direction):
         current_direction = self.snake.direction
@@ -138,23 +140,33 @@ class SnakeGame:
                     self.label.config(text="Points:{}".format(self.score))
                     self.snake.eat()
                     for i in range(Apple.m_frenzy_iterator):
-                        self.apples.append(Apple(self.canvas, FOOD_SIZE,self.snake.coordinates))
+                        self.apples.append(Apple(self.canvas, FOOD_SIZE, self.snake.coordinates))
                 # Move the snake
                 self.snake.move(self.snake.direction)
-            else:
+            elif self.game_mode_flag == 3:
                 x, y = self.snake.coordinates[0]
-                if (x,y) in self.apple.coordinates:
+                if (x, y) in self.apple.coordinates:
+                    self.time_between_turns -= 5
                     self.score += 1
                     self.label.config(text="Points:{}".format(self.score))
                     self.snake.eat()
                     self.apple.delete()
-                    self.apple = Apple(self.canvas, FOOD_SIZE,self.snake.coordinates)
+                    self.apple = Apple(self.canvas, FOOD_SIZE, self.snake.coordinates)
+                self.snake.move(self.snake.direction)
+            else:
+                x, y = self.snake.coordinates[0]
+                if (x, y) in self.apple.coordinates:
+                    self.score += 1
+                    self.label.config(text="Points:{}".format(self.score))
+                    self.snake.eat()
+                    self.apple.delete()
+                    self.apple = Apple(self.canvas, FOOD_SIZE, self.snake.coordinates)
                 self.snake.move(self.snake.direction)
 
             # Check for collisions with the apple
 
             # Call the next_turn function again after a delay to create a game loop
-            self.root.after(100, self.next_turn)
+            self.root.after(self.time_between_turns, self.next_turn)
             if self.snake.check_collisions():
                 self.game_over()
 
@@ -185,7 +197,7 @@ class SnakeGame:
         # Reset snake and apple
         self.snake.reset_snake()
         self.apple.delete()
-        self.apple = Apple(self.canvas, FOOD_SIZE,self.snake.coordinates)
+        self.apple = Apple(self.canvas, FOOD_SIZE, self.snake.coordinates)
         self.apples.append(self.apple)
 
         # Destroy the play again frame if it exists
